@@ -15,35 +15,29 @@ int main() {
         cout << "NO" << endl;
     }
     else {
-        long long massi[n];
-        for (int i=0; i<=n; i++) {
-            if (i==0) {
-                massi[i]=0;
+        cout << "YES" << endl;
+        if (n%2==0) {
+            cout << n/2 << endl;
+            for (int i=1; i<=n/2; i+=2) {
+                cout << i << " " << n-i+1 << " ";
             }
-            else {
-                massi[i]=i;
+            cout << endl;
+            cout << n/2 << endl;
+            for (int j=2; j<=n/2; j+=2) {
+                cout << j << " " << n-j+1 << " ";
             }
         }
-        long long A[summan(n)/2+1];
-        for (int k=0; k<summan(n)/2+1; k++) {
-            if (k==0) {
-                A[k]=1;
+        else {
+            cout << (n-1)/2+1 << endl;
+            for (int i=1; i<=(n-1)/2; i+=2) {
+                cout << i << " " << n-i << " ";
             }
-            else {
-                A[k]=0;
+            cout << endl;
+            cout << (n-1)/2 << endl;
+            for (int j=2; j<=(n-1)/2; j+=2) {
+                cout << j << " " << n-j << " ";
             }
-            
-        }
-        for (int i=0; i<=n; i++) {
-            for (long long j=summan(n)/2-i; j>=0; j--) {
-                if (A[j]!=0) {
-                    A[j+i]=1;
-                }
-            }
-            if (A[summan(n)/2]==1) {
-                cout << "Yes";
-                break;
-            }
+            cout << n << endl;
         }
     }
 }
